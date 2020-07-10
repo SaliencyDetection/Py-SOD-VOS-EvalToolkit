@@ -167,6 +167,36 @@ CoNet = {
     "dutrgbd": os.path.join(CoNet_root, "DUT-RGBD"),
 }
 
+BBSNet_root = (
+    "/home/lart/Datasets/Saliency/PaperResults/RGBDSODPaperResults/ECCV2020_BBSNet"
+)
+BBSNet = {
+    "lfsd": os.path.join(BBSNet_root, "LFSD"),
+    "njud": os.path.join(BBSNet_root, "NJU2K"),
+    "nlpr": os.path.join(BBSNet_root, "NLPR"),
+    "rgbd135": os.path.join(BBSNet_root, "DES"),
+    "sip": os.path.join(BBSNet_root, "SIP"),
+    "ssd": os.path.join(BBSNet_root, "SSD"),
+    "stereo797": None,
+    "stereo1000": os.path.join(BBSNet_root, "STERE"),
+    "dutrgbd": os.path.join(BBSNet_root, "DUT"),
+}
+
+CMWNet_root = (
+    "/home/lart/Datasets/Saliency/PaperResults/RGBDSODPaperResults/ECCV2020_CMWNet"
+)
+CMWNet = {
+    "lfsd": os.path.join(CMWNet_root, "LFSD"),
+    "njud": os.path.join(CMWNet_root, "NJU2K"),
+    "nlpr": os.path.join(CMWNet_root, "NLPR"),
+    "rgbd135": os.path.join(CMWNet_root, "DES"),
+    "sip": os.path.join(CMWNet_root, "SIP"),
+    "ssd": os.path.join(CMWNet_root, "SSD"),
+    "stereo797": None,
+    "stereo1000": os.path.join(CMWNet_root, "STEREO"),
+    "dutrgbd": os.path.join(CMWNet_root, "DUT-RGBD"),
+}
+
 MINet_root = "/home/lart/coding/Paper_Code/Other_Files/Out"
 MINet = {
     "duts": os.path.join(MINet_root, "DUTS", "VGG16FCN_OctDeV1TransV1_2Loss"),
@@ -227,33 +257,60 @@ all_methods_info = OrderedDict(
                 "line_width": 3,
             },
         },
-        # "UCNet": {
-        #     "path_dict": UCNet,
-        #     "curve_setting": {
-        #         "line_color": "seagreen",
-        #         "line_style": "--",
-        #         "line_label": "OURS_2$^{\dag}$",
-        #         "line_width": 2,
-        #     },
-        # },
-        # "JLDCF": {
-        #     "path_dict": JLDCF,
-        #     "curve_setting": {
-        #         "line_color": "seagreen",
-        #         "line_style": "--",
-        #         "line_label": "OURS_2$^{\dag}$",
-        #         "line_width": 2,
-        #     },
-        # },
-        # "S2MA": {
-        #     "path_dict": S2MA,
-        #     "curve_setting": {
-        #         "line_color": "seagreen",
-        #         "line_style": "--",
-        #         "line_label": "OURS_2$^{\dag}$",
-        #         "line_width": 2,
-        #     },
-        # },
+        "UCNet": {
+            "path_dict": UCNet,
+            "curve_setting": {
+                "line_color": "seagreen",
+                "line_style": "--",
+                "line_label": "UCNet",
+                "line_width": 2,
+            },
+        },
+        "JLDCF": {
+            "path_dict": JLDCF,
+            "curve_setting": {
+                "line_color": "seagreen",
+                "line_style": "--",
+                "line_label": "JLDCF",
+                "line_width": 2,
+            },
+        },
+        "S2MA": {
+            "path_dict": S2MA,
+            "curve_setting": {
+                "line_color": "seagreen",
+                "line_style": "--",
+                "line_label": "S2MA",
+                "line_width": 2,
+            },
+        },
+        "CoNet": {
+            "path_dict": CoNet,
+            "curve_setting": {
+                "line_color": "seagreen",
+                "line_style": "--",
+                "line_label": "CoNet",
+                "line_width": 2,
+            },
+        },
+        "BBSNet": {
+            "path_dict": BBSNet,
+            "curve_setting": {
+                "line_color": "seagreen",
+                "line_style": "--",
+                "line_label": "BBSNet",
+                "line_width": 2,
+            },
+        },
+        "CMWNet": {
+            "path_dict": CMWNet,
+            "curve_setting": {
+                "line_color": "seagreen",
+                "line_style": "--",
+                "line_label": "CMWNet",
+                "line_width": 2,
+            },
+        },
     }
 )
 

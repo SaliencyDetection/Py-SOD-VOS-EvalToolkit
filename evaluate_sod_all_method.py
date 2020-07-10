@@ -159,10 +159,10 @@ def cal_all_metrics():
                 }
             )
 
-            txt_recoder.add_method_results(
-                data_dict=all_quantitative_results_dict[dataset_name.lower()],
-                method_name=method_name,
-            )
+        txt_recoder.add_method_results(
+            data_dict=all_quantitative_results_dict[dataset_name.lower()],
+            method_name=dataset_name,
+        )
 
     if save_npy:
         np.save(

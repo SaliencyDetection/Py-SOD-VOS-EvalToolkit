@@ -132,7 +132,7 @@ class TxtRecorder:
         self.txt_path = txt_path
         mode = "a" if resume else "w"
         with open(txt_path, mode=mode, encoding="utf-8") as f:
-            f.write(f" ========>> Date: {datetime.now()} <<======== ")
+            f.write(f" ========>> Date: {datetime.now()} <<======== \n")
 
     def add_row(self, row_name, row_data):
         with open(self.txt_path, mode="a", encoding="utf-8") as f:
@@ -142,9 +142,9 @@ class TxtRecorder:
         self, data_dict: dict, method_name: str,
     ):
         # save the results under testing
-        msg = f" ==>> Model: {method_name}"
+        msg = ""
         for k, v in data_dict.items():
-            msg += f" {k} {v}"
+            msg += f" {k} {v}\n"
         with open(self.txt_path, mode="a", encoding="utf-8") as f:
             f.write(msg + "\n")
 

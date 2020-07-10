@@ -57,6 +57,12 @@ my_parser.add_argument(
     type=str,
     help="whether to ignore the last frame during evaluation",
 )
+my_parser.add_argument(
+    "--n_jobs",
+    default=2,
+    type=int,
+    help="the number of jobs for parallel evaluating the performance",
+)
 
 
 def print_all_keys(data_dict, level: int = 0):
@@ -188,8 +194,9 @@ def get_method_score_dict(
     video_name_list: list,
     ignore_head: bool = True,
     ignore_tail: bool = True,
+    n_jobs: int = 2,
 ):
-    video_score_list = Parallel(n_jobs=10)(
+    video_score_list = Parallel(n_jobs=2)(
         delayed(_eval_video_sequence)(
             method_pre_path=method_pre_path,
             mask_data_root=mask_data_root,
@@ -259,6 +266,7 @@ def eval_method_from_data(
     ignore_tail: bool,
     data_yaml_path: str,
     save_path: str = "./output/average.pkl",
+    n_jobs: int = 2,
 ):
     """
     根据给定方法的预测结果来评估在davis 2016上的性能
@@ -268,6 +276,7 @@ def eval_method_from_data(
     :param ignore_tail: 评估时是否忽略最后一帧
     :param data_yaml_path: davis 2016数据集的信息文件（db_info.yml）
     :param save_path: 保存导出的模型评估结果的文件路径
+    :param n_jobs: 多进程评估时使用的进程数
     """
     # read yaml
     data_info_dict = get_info_dict_from_yaml(data_yaml_path)
@@ -280,6 +289,7 @@ def eval_method_from_data(
         video_name_list=eval_video_name_list,
         ignore_head=ignore_head,
         ignore_tail=ignore_tail,
+        n_jobs=n_jobs,
     )
     # get the average score
     average_score_dict = get_method_average_score_dict(
@@ -325,6 +335,7 @@ if __name__ == "__main__":
         ignore_head=True if args.ignore_head == "True" else False,
         data_yaml_path=args.db_yaml_path,
         save_path=args.save_path,
+        n_jobs=args.n_joss,
     )
     # show_results_from_data_file("./output/dybinary_ave.pkl")
     # show_results_from_data_file("./output/HDFNet_WSGNR50_V1.pkl")

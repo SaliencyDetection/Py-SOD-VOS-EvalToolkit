@@ -19,7 +19,8 @@ dutrgbdte_path = os.path.join(
 )
 sip_path = os.path.join(datasets_root, "Saliency/RGBDSOD", "SIP", "Mask")
 ssd_path = os.path.join(datasets_root, "Saliency/RGBDSOD", "SSD", "Mask")
-stereo_path = os.path.join(datasets_root, "Saliency/RGBDSOD", "STEREO-1000", "Mask")
+stereo797_path = os.path.join(datasets_root, "Saliency/RGBDSOD", "STEREO-797", "Mask")
+stereo1000_path = os.path.join(datasets_root, "Saliency/RGBDSOD", "STEREO-1000", "Mask")
 rgbdtr_path = os.path.join(datasets_root, "Saliency/RGBDSOD", "rgbd_train_jw.lst")
 
 
@@ -41,7 +42,8 @@ all_dataset_path = {
             "RGBD135": rgbd135_path,
             "SIP": sip_path,
             "SSD": ssd_path,
-            "STEREO": stereo_path,
+            "STEREO797": stereo797_path,
+            "STEREO1000": stereo1000_path,
             "DUTRGBD": dutrgbdte_path,
         }
     ),
@@ -65,40 +67,104 @@ use_indexfile = {
 }
 
 
-OURS_1_root = "/home/lart/Coding/HDFNet/output/HDFNet/pre"
-OURS_1 = {
-    "lfsd": os.path.join(OURS_1_root, "lfsd"),
-    "njud": os.path.join(OURS_1_root, "njud"),
-    "nlpr": os.path.join(OURS_1_root, "nlpr"),
-    "rgbd135": os.path.join(OURS_1_root, "rgbd135"),
-    "sip": os.path.join(OURS_1_root, "sip"),
-    "ssd": os.path.join(OURS_1_root, "ssd"),
-    "stereo": os.path.join(OURS_1_root, "stereo"),
+HDFNet_VGG16_root = "/home/lart/Coding/HDFFile/output/HDFNet/HDFNet_VGG16"
+HDFNet_VGG16 = {
+    "lfsd": os.path.join(HDFNet_VGG16_root, "lfsd"),
+    "njud": os.path.join(HDFNet_VGG16_root, "njud"),
+    "nlpr": os.path.join(HDFNet_VGG16_root, "nlpr"),
+    "rgbd135": os.path.join(HDFNet_VGG16_root, "rgbd135"),
+    "sip": os.path.join(HDFNet_VGG16_root, "sip"),
+    "ssd": os.path.join(HDFNet_VGG16_root, "ssd"),
+    "stereo797": os.path.join(HDFNet_VGG16_root, "stereo797"),
+    "stereo1000": os.path.join(HDFNet_VGG16_root, "stereo1000"),
+    "dutrgbd": os.path.join(HDFNet_VGG16_root, "dutrgbd"),
+}
+
+HDFNet_VGG19_root = "/home/lart/Coding/HDFFile/output/HDFNet/HDFNet_VGG19"
+HDFNet_VGG19 = {
+    "lfsd": os.path.join(HDFNet_VGG19_root, "lfsd"),
+    "njud": os.path.join(HDFNet_VGG19_root, "njud"),
+    "nlpr": os.path.join(HDFNet_VGG19_root, "nlpr"),
+    "rgbd135": os.path.join(HDFNet_VGG19_root, "rgbd135"),
+    "sip": os.path.join(HDFNet_VGG19_root, "sip"),
+    "ssd": os.path.join(HDFNet_VGG19_root, "ssd"),
+    "stereo797": os.path.join(HDFNet_VGG19_root, "stereo797"),
+    "stereo1000": os.path.join(HDFNet_VGG19_root, "stereo1000"),
+    "dutrgbd": os.path.join(HDFNet_VGG19_root, "dutrgbd"),
+}
+
+HDFNet_Res50_root = "/home/lart/Coding/HDFFile/output/HDFNet/HDFNet_Res50"
+HDFNet_Res50 = {
+    "lfsd": os.path.join(HDFNet_Res50_root, "lfsd"),
+    "njud": os.path.join(HDFNet_Res50_root, "njud"),
+    "nlpr": os.path.join(HDFNet_Res50_root, "nlpr"),
+    "rgbd135": os.path.join(HDFNet_Res50_root, "rgbd135"),
+    "sip": os.path.join(HDFNet_Res50_root, "sip"),
+    "ssd": os.path.join(HDFNet_Res50_root, "ssd"),
+    "stereo797": os.path.join(HDFNet_Res50_root, "stereo797"),
+    "stereo1000": os.path.join(HDFNet_Res50_root, "stereo1000"),
+    "dutrgbd": os.path.join(HDFNet_Res50_root, "dutrgbd"),
+}
+
+
+UCNet_root = (
+    "/home/lart/Datasets/Saliency/PaperResults/RGBDSODPaperResults/CVPR2020_UCNet"
+)
+UCNet = {
+    "lfsd": os.path.join(UCNet_root, "LFSD"),
+    "njud": os.path.join(UCNet_root, "NJU2K"),
+    "nlpr": os.path.join(UCNet_root, "NLPR"),
+    "rgbd135": os.path.join(UCNet_root, "DES"),
+    "sip": os.path.join(UCNet_root, "SIP"),
+    "ssd": None,
+    "stereo797": None,
+    "stereo1000": os.path.join(UCNet_root, "STERE"),
     "dutrgbd": None,
 }
 
-OURS_2_root = "/home/lart/Coding/HDFNet/output/HDFNet/original_pre"
-OURS_2 = {
-    "lfsd": os.path.join(OURS_2_root, "lfsd"),
-    "njud": os.path.join(OURS_2_root, "njud"),
-    "nlpr": os.path.join(OURS_2_root, "nlpr"),
-    "rgbd135": os.path.join(OURS_2_root, "rgbd135"),
-    "sip": os.path.join(OURS_2_root, "sip"),
-    "ssd": os.path.join(OURS_2_root, "ssd"),
-    "stereo": os.path.join(OURS_2_root, "stereo"),
-    "dutrgbd": None,
+JLDCF_root = (
+    "/home/lart/Datasets/Saliency/PaperResults/RGBDSODPaperResults/CVPR2020_JL-DCF"
+)
+JLDCF = {
+    "lfsd": os.path.join(JLDCF_root, "LFSD"),
+    "njud": os.path.join(JLDCF_root, "NJU2K"),
+    "nlpr": os.path.join(JLDCF_root, "NLPR"),
+    "rgbd135": os.path.join(JLDCF_root, "RGBD135"),
+    "sip": os.path.join(JLDCF_root, "SIP"),
+    "ssd": None,
+    "stereo797": None,
+    "stereo1000": os.path.join(JLDCF_root, "STERE"),
+    "dutrgbd": os.path.join(JLDCF_root, "DUT-RGBD-testing"),
 }
 
-AFNet_root = "/home/lart/Datasets/SaliencyPaper/RGBD对比模型结果/TotalRGBD/AFNet"
-AFNet = {
-    "lfsd": os.path.join(AFNet_root, "LFSD"),
-    "njud": os.path.join(AFNet_root, "NJU2K-TEST"),
-    "nlpr": os.path.join(AFNet_root, "NLPR-TEST"),
-    "rgbd135": os.path.join(AFNet_root, "DES"),
-    "sip": os.path.join(AFNet_root, "SIP"),
-    "ssd": os.path.join(AFNet_root, "SSD"),
-    "stereo": os.path.join(AFNet_root, "STERE"),
-    "dutrgbd": None,
+S2MA_root = (
+    "/home/lart/Datasets/Saliency/PaperResults/RGBDSODPaperResults/CVPR2020_S2MA"
+)
+S2MA = {
+    "lfsd": os.path.join(S2MA_root, "LFSD"),
+    "njud": os.path.join(S2MA_root, "NJU2K"),
+    "nlpr": os.path.join(S2MA_root, "NLPR"),
+    "rgbd135": os.path.join(S2MA_root, "RGBD135"),
+    "sip": None,
+    "ssd": os.path.join(S2MA_root, "SSD100"),
+    "stereo797": None,
+    "stereo1000": os.path.join(S2MA_root, "STERE"),
+    "dutrgbd": os.path.join(S2MA_root, "DUT-RGBD"),
+}
+
+CoNet_root = (
+    "/home/lart/Datasets/Saliency/PaperResults/RGBDSODPaperResults/ECCV2020_CoNet"
+)
+CoNet = {
+    "lfsd": os.path.join(CoNet_root, "LFSD"),
+    "njud": os.path.join(CoNet_root, "NJUD"),
+    "nlpr": os.path.join(CoNet_root, "NLPR"),
+    "rgbd135": os.path.join(CoNet_root, "RGBD135"),
+    "sip": os.path.join(CoNet_root, "SIP"),
+    "ssd": os.path.join(CoNet_root, "SSD"),
+    "stereo797": os.path.join(CoNet_root, "STEREO"),
+    "stereo1000": None,
+    "dutrgbd": os.path.join(CoNet_root, "DUT-RGBD"),
 }
 
 MINet_root = "/home/lart/coding/Paper_Code/Other_Files/Out"
@@ -134,24 +200,60 @@ CPD = {
 
 all_methods_info = OrderedDict(
     {
-        "OURS_1": {
-            "path_dict": OURS_1,
+        "HDFNet_VGG16": {
+            "path_dict": HDFNet_VGG16,
             "curve_setting": {
                 "line_color": "red",
                 "line_style": "-",
-                "line_label": "OURS_1$^{\dag}$",
+                "line_label": "HDFNet$_{VGG16}$",
                 "line_width": 3,
             },
         },
-        "OURS_2": {
-            "path_dict": OURS_2,
+        "HDFNet_VGG19": {
+            "path_dict": HDFNet_VGG19,
             "curve_setting": {
-                "line_color": "seagreen",
-                "line_style": "--",
-                "line_label": "OURS_2$^{\dag}$",
-                "line_width": 2,
+                "line_color": "red",
+                "line_style": "-",
+                "line_label": "HDFNet$_{VGG19}$",
+                "line_width": 3,
             },
         },
+        "HDFNet_Res50": {
+            "path_dict": HDFNet_Res50,
+            "curve_setting": {
+                "line_color": "red",
+                "line_style": "-",
+                "line_label": "HDFNet$_{Res50}$",
+                "line_width": 3,
+            },
+        },
+        # "UCNet": {
+        #     "path_dict": UCNet,
+        #     "curve_setting": {
+        #         "line_color": "seagreen",
+        #         "line_style": "--",
+        #         "line_label": "OURS_2$^{\dag}$",
+        #         "line_width": 2,
+        #     },
+        # },
+        # "JLDCF": {
+        #     "path_dict": JLDCF,
+        #     "curve_setting": {
+        #         "line_color": "seagreen",
+        #         "line_style": "--",
+        #         "line_label": "OURS_2$^{\dag}$",
+        #         "line_width": 2,
+        #     },
+        # },
+        # "S2MA": {
+        #     "path_dict": S2MA,
+        #     "curve_setting": {
+        #         "line_color": "seagreen",
+        #         "line_style": "--",
+        #         "line_label": "OURS_2$^{\dag}$",
+        #         "line_width": 2,
+        #     },
+        # },
     }
 )
 
@@ -162,8 +264,8 @@ user_setting = {
     "resume_record": False,  # 是否保留之前的评估记录（针对record_path文件有效）
     "suffix": {"pre": ".png", "gt": ".png"},  # 预测结果的扩展名和真值数据的扩展名
     "eval_single_setting": {  # 针对单个模型评估的设置
-        "pred_path": OURS_1,  # 待评估的预测结果的路径
-        "model_name": "OURS",  # 待评估的模型名字
+        "pred_path": HDFNet_VGG16,  # 待评估的预测结果的路径
+        "model_name": "HDFNet_VGG16",  # 待评估的模型名字
         "record_path": os.path.join(output_path, "record.txt"),  # 用来保存测试结果的文件的路径
         "export_xlsx": False,  # 是否导出xlsx文件
         "xlsx_path": os.path.join(output_path, "rgbd_results.xlsx"),  # xlsx文件的路径
@@ -172,7 +274,8 @@ user_setting = {
         "all_methods_info": all_methods_info,  # 包含所有待比较模型结果的信息和绘图配置的字典
         "record_path": os.path.join(output_path, "all_record.txt"),  # 用来保存测试结果的文件的路径
         "save_npy": True,  # 是否将评估结果到npy文件中，该文件可用来绘制pr和fm曲线
-        "npy_name": "all_methods_on_all_datasets.npy",  # 导出的npy文件的路径
+        "qualitative_npy_name": "all_qualitative_results.npy",  # 保存曲线指标数据的文件路径
+        "quantitative_npy_name": "all_quantitative_results.npy",  # 保存曲线指标数据的文件路径
         "axes_setting": {  # 不同曲线的绘图配置
             "pr": {  # pr曲线的配置
                 "x_label": "Recall",  # 横坐标标签

@@ -1,13 +1,15 @@
 import argparse
 import os
 from collections import defaultdict
+from pprint import pprint
+
 import numpy as np
 from tqdm import tqdm
 
 from config import output_path, all_dataset_path, use_indexfile, user_setting
 from utils.recorder import CurveDrawer, MetricRecorder, TxtRecorder
 from utils.misc import (
-    get_img_gt_with_name,
+    get_gt_pre_with_name,
     get_name_list_and_suffix,
     make_dir,
 )
@@ -47,8 +49,13 @@ all_methods_info = user_setting["eval_all_setting"]["all_methods_info"]
 data_mode = user_setting["data_mode"]
 dataset_path_dict = all_dataset_path[data_mode]
 save_npy = user_setting["eval_all_setting"]["save_npy"]
-npy_path = os.path.join(
-    output_path, data_mode + "_" + user_setting["eval_all_setting"]["npy_name"]
+qualitative_npy_path = os.path.join(
+    output_path,
+    data_mode + "_" + user_setting["eval_all_setting"]["qualitative_npy_name"],
+)
+quantitative_npy_path = os.path.join(
+    output_path,
+    data_mode + "_" + user_setting["eval_all_setting"]["quantitative_npy_name"],
 )
 resume_record = user_setting["resume_record"]
 
@@ -80,7 +87,7 @@ def cal_all_metrics():
       ....
     }"""
     all_qualitative_results_dict = defaultdict(dict)  # Two curve metrics
-    all_quantitative_results_dict = {}  #  Six numerical metrics
+    all_quantitative_results_dict = defaultdict(dict)  # Six numerical metrics
 
     txt_recoder = TxtRecorder(txt_path=record_path, resume=resume_record)
 
@@ -94,7 +101,7 @@ def cal_all_metrics():
             else dataset_path
         )
 
-        # ==>> test the intersection between pre and gt for each method <<== #
+        # ==>> test the intersection between pre and gt for each method <<==
         for method_name, method_info in all_methods_info.items():
             method_result_path_dict = method_info["path_dict"]
             dataset_name = get_valid_key_name(
@@ -112,7 +119,7 @@ def cal_all_metrics():
             )
             # 真值名字列表
             gt_list, gt_ext = get_name_list_and_suffix(gt_root)
-            # get the intersect
+            # get the intersection
             eval_list = list(set(gt_list).intersection(set(pre_list)))
             print(
                 f" ==>> It is evaluating {method_name} with {len(eval_list)} images <<== "
@@ -122,7 +129,7 @@ def cal_all_metrics():
                 eval_length_for_fm=len(eval_list), beta_for_wfm=1
             )
             for img_name in tqdm(eval_list, total=len(eval_list), leave=False):
-                gt, pre = get_img_gt_with_name(
+                gt, pre = get_gt_pre_with_name(
                     gt_root=gt_root,
                     pre_root=method_result_path_dict[dataset_name],
                     img_name=img_name,
@@ -135,18 +142,22 @@ def cal_all_metrics():
                 bit_num=user_setting["bit_num"]
             )
 
-            all_qualitative_results_dict[dataset_name].update(
+            all_qualitative_results_dict[dataset_name.lower()].update(
                 {method_name: {"prs": (ps, rs), "fs": fs}}
             )
 
-            all_quantitative_results_dict[dataset_name.lower()] = {
-                "MaxF": maxf,
-                "MeanF": meanf,
-                "WFM": wfm,
-                "MAE": mae,
-                "SM": sm,
-                "EM": em,
-            }
+            all_quantitative_results_dict[dataset_name.lower()].update(
+                {
+                    method_name: {
+                        "MaxF": maxf,
+                        "MeanF": meanf,
+                        "WFM": wfm,
+                        "MAE": mae,
+                        "SM": sm,
+                        "EM": em,
+                    }
+                }
+            )
 
             txt_recoder.add_method_results(
                 data_dict=all_quantitative_results_dict[dataset_name.lower()],
@@ -155,11 +166,17 @@ def cal_all_metrics():
 
     if save_npy:
         np.save(
-            npy_path, all_qualitative_results_dict,
+            qualitative_npy_path, all_qualitative_results_dict,
         )
-        print(f" ==>> all methods have been saved in {npy_path} <<== ")
+        np.save(
+            quantitative_npy_path, all_quantitative_results_dict,
+        )
+        print(
+            f" ==>> all methods have been saved in {qualitative_npy_path} and {quantitative_npy_path} <<== "
+        )
 
-    print(f" ==>> all methods have been tested:\n {all_quantitative_results_dict}")
+    print(f" ==>> all methods have been tested:")
+    pprint(all_quantitative_results_dict)
 
 
 def draw_pr_fm_curve(mode: str):
@@ -168,7 +185,7 @@ def draw_pr_fm_curve(mode: str):
     x_lim, y_lim = mode_axes_setting["x_lim"], mode_axes_setting["y_lim"]
 
     all_qualitative_results_dict = np.load(
-        os.path.join(npy_path), allow_pickle=True,
+        os.path.join(qualitative_npy_path), allow_pickle=True,
     ).item()
 
     curve_drawer = CurveDrawer(

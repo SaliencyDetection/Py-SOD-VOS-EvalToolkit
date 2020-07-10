@@ -106,7 +106,7 @@ def make_dir(path):
         print(f"`{path}`已存在")
 
 
-def get_img_gt_with_name(
+def get_gt_pre_with_name(
     gt_root: str, pre_root: str, img_name: str, pre_ext: str, gt_ext: str = ".png"
 ):
     img_path = os.path.join(pre_root, img_name + pre_ext)

@@ -46,3 +46,48 @@ A Python-based salient object detection and video object segmentation evaluation
 ## 最后
 
 由于本工具箱是用来评估指标，所以计算过程的正确性十分重要，但是编写能力有限，可能存在一些小问题，希望大家可以及时指出。
+
+## Thanks
+
+```text
+@inproceedings{Fmeasure,
+    title={Frequency-tuned salient region detection},
+    author={Achanta, Radhakrishna and Hemami, Sheila and Estrada, Francisco and S{\"u}sstrunk, Sabine},
+    booktitle=CVPR,
+    number={CONF},
+    pages={1597--1604},
+    year={2009}
+}
+
+@inproceedings{MAE,
+    title={Saliency filters: Contrast based filtering for salient region detection},
+    author={Perazzi, Federico and Kr{\"a}henb{\"u}hl, Philipp and Pritch, Yael and Hornung, Alexander},
+    booktitle=CVPR,
+    pages={733--740},
+    year={2012}
+}
+
+@inproceedings{Smeasure,
+    title={Structure-measure: A new way to evaluate foreground maps},
+    author={Fan, Deng-Ping and Cheng, Ming-Ming and Liu, Yun and Li, Tao and Borji, Ali},
+    booktitle=ICCV,
+    pages={4548--4557},
+    year={2017}
+}
+
+@inproceedings{Emeasure,
+    title="Enhanced-alignment Measure for Binary Foreground Map Evaluation",
+    author="Deng-Ping {Fan} and Cheng {Gong} and Yang {Cao} and Bo {Ren} and Ming-Ming {Cheng} and Ali {Borji}",
+    booktitle=IJCAI,
+    pages="698--704",
+    year={2018}
+}
+
+@inproceedings{wFmeasure,
+  title={How to evaluate foreground maps?},
+  author={Margolin, Ran and Zelnik-Manor, Lihi and Tal, Ayellet},
+  booktitle=CVPR,
+  pages={248--255},
+  year={2014}
+}
+```

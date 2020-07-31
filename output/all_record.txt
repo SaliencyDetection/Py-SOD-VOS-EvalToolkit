@@ -1,0 +1,90 @@
+ ========>> Date: 2020-07-31 10:13:22.099014 <<======== 
+ ========>> Dataset: LFSD <<======== 
+ HDFNet_VGG16 {'MaxF': 0.86, 'MeanF': 0.831, 'WFM': 0.792, 'MAE': 0.085, 'SM': 0.847, 'EM': 0.883}
+ HDFNet_VGG19 {'MaxF': 0.858, 'MeanF': 0.833, 'WFM': 0.793, 'MAE': 0.083, 'SM': 0.844, 'EM': 0.886}
+ HDFNet_Res50 {'MaxF': 0.883, 'MeanF': 0.843, 'WFM': 0.806, 'MAE': 0.076, 'SM': 0.854, 'EM': 0.891}
+ UCNet {'MaxF': 0.878, 'MeanF': 0.859, 'WFM': 0.832, 'MAE': 0.066, 'SM': 0.864, 'EM': 0.906}
+ JLDCF {'MaxF': 0.887, 'MeanF': 0.854, 'WFM': 0.822, 'MAE': 0.07, 'SM': 0.861, 'EM': 0.902}
+ S2MA {'MaxF': 0.862, 'MeanF': 0.82, 'WFM': 0.772, 'MAE': 0.094, 'SM': 0.837, 'EM': 0.876}
+ CoNet {'MaxF': 0.877, 'MeanF': 0.848, 'WFM': 0.815, 'MAE': 0.071, 'SM': 0.862, 'EM': 0.901}
+ BBSNet {'MaxF': 0.879, 'MeanF': 0.858, 'WFM': 0.814, 'MAE': 0.072, 'SM': 0.864, 'EM': 0.901}
+ CMWNet {'MaxF': 0.9, 'MeanF': 0.87, 'WFM': 0.834, 'MAE': 0.066, 'SM': 0.876, 'EM': 0.908}
+
+ ========>> Dataset: NJUD <<======== 
+ HDFNet_VGG16 {'MaxF': 0.924, 'MeanF': 0.894, 'WFM': 0.881, 'MAE': 0.037, 'SM': 0.911, 'EM': 0.934}
+ HDFNet_VGG19 {'MaxF': 0.922, 'MeanF': 0.887, 'WFM': 0.877, 'MAE': 0.038, 'SM': 0.911, 'EM': 0.932}
+ HDFNet_Res50 {'MaxF': 0.922, 'MeanF': 0.889, 'WFM': 0.877, 'MAE': 0.038, 'SM': 0.908, 'EM': 0.932}
+ UCNet {'MaxF': 0.908, 'MeanF': 0.889, 'WFM': 0.868, 'MAE': 0.043, 'SM': 0.897, 'EM': 0.934}
+ JLDCF {'MaxF': 0.912, 'MeanF': 0.885, 'WFM': 0.869, 'MAE': 0.041, 'SM': 0.902, 'EM': 0.935}
+ S2MA {'MaxF': 0.899, 'MeanF': 0.865, 'WFM': 0.842, 'MAE': 0.053, 'SM': 0.894, 'EM': 0.916}
+ CoNet {'MaxF': 0.902, 'MeanF': 0.873, 'WFM': 0.849, 'MAE': 0.046, 'SM': 0.895, 'EM': 0.924}
+ BBSNet {'MaxF': 0.931, 'MeanF': 0.902, 'WFM': 0.884, 'MAE': 0.035, 'SM': 0.921, 'EM': 0.942}
+ CMWNet {'MaxF': 0.913, 'MeanF': 0.88, 'WFM': 0.857, 'MAE': 0.046, 'SM': 0.903, 'EM': 0.923}
+
+ ========>> Dataset: NLPR <<======== 
+ HDFNet_VGG16 {'MaxF': 0.917, 'MeanF': 0.878, 'WFM': 0.869, 'MAE': 0.027, 'SM': 0.916, 'EM': 0.948}
+ HDFNet_VGG19 {'MaxF': 0.919, 'MeanF': 0.883, 'WFM': 0.871, 'MAE': 0.027, 'SM': 0.915, 'EM': 0.951}
+ HDFNet_Res50 {'MaxF': 0.927, 'MeanF': 0.889, 'WFM': 0.882, 'MAE': 0.023, 'SM': 0.923, 'EM': 0.957}
+ UCNet {'MaxF': 0.915, 'MeanF': 0.89, 'WFM': 0.878, 'MAE': 0.025, 'SM': 0.919, 'EM': 0.955}
+ JLDCF {'MaxF': 0.925, 'MeanF': 0.878, 'WFM': 0.882, 'MAE': 0.022, 'SM': 0.925, 'EM': 0.955}
+ S2MA {'MaxF': 0.91, 'MeanF': 0.853, 'WFM': 0.852, 'MAE': 0.03, 'SM': 0.915, 'EM': 0.942}
+ CoNet {'MaxF': 0.898, 'MeanF': 0.847, 'WFM': 0.842, 'MAE': 0.031, 'SM': 0.908, 'EM': 0.934}
+ BBSNet {'MaxF': 0.927, 'MeanF': 0.882, 'WFM': 0.879, 'MAE': 0.023, 'SM': 0.93, 'EM': 0.953}
+ CMWNet {'MaxF': 0.913, 'MeanF': 0.859, 'WFM': 0.856, 'MAE': 0.029, 'SM': 0.917, 'EM': 0.94}
+
+ ========>> Dataset: RGBD135 <<======== 
+ HDFNet_VGG16 {'MaxF': 0.934, 'MeanF': 0.919, 'WFM': 0.902, 'MAE': 0.02, 'SM': 0.932, 'EM': 0.973}
+ HDFNet_VGG19 {'MaxF': 0.941, 'MeanF': 0.918, 'WFM': 0.913, 'MAE': 0.017, 'SM': 0.937, 'EM': 0.976}
+ HDFNet_Res50 {'MaxF': 0.932, 'MeanF': 0.912, 'WFM': 0.895, 'MAE': 0.021, 'SM': 0.926, 'EM': 0.971}
+ UCNet {'MaxF': 0.936, 'MeanF': 0.917, 'WFM': 0.908, 'MAE': 0.018, 'SM': 0.933, 'EM': 0.974}
+ JLDCF {'MaxF': 0.934, 'MeanF': 0.9, 'WFM': 0.894, 'MAE': 0.02, 'SM': 0.931, 'EM': 0.969}
+ S2MA {'MaxF': 0.944, 'MeanF': 0.906, 'WFM': 0.892, 'MAE': 0.021, 'SM': 0.941, 'EM': 0.974}
+ CoNet {'MaxF': 0.915, 'MeanF': 0.871, 'WFM': 0.849, 'MAE': 0.028, 'SM': 0.909, 'EM': 0.945}
+ BBSNet {'MaxF': 0.942, 'MeanF': 0.906, 'WFM': 0.89, 'MAE': 0.021, 'SM': 0.933, 'EM': 0.967}
+ CMWNet {'MaxF': 0.939, 'MeanF': 0.9, 'WFM': 0.888, 'MAE': 0.022, 'SM': 0.934, 'EM': 0.967}
+
+ ========>> Dataset: SIP <<======== 
+ HDFNet_VGG16 {'MaxF': 0.904, 'MeanF': 0.863, 'WFM': 0.835, 'MAE': 0.05, 'SM': 0.878, 'EM': 0.92}
+ HDFNet_VGG19 {'MaxF': 0.907, 'MeanF': 0.87, 'WFM': 0.844, 'MAE': 0.047, 'SM': 0.885, 'EM': 0.924}
+ HDFNet_Res50 {'MaxF': 0.91, 'MeanF': 0.875, 'WFM': 0.848, 'MAE': 0.047, 'SM': 0.886, 'EM': 0.924}
+ UCNet {'MaxF': 0.896, 'MeanF': 0.868, 'WFM': 0.836, 'MAE': 0.051, 'SM': 0.875, 'EM': 0.918}
+ JLDCF {'MaxF': 0.904, 'MeanF': 0.873, 'WFM': 0.844, 'MAE': 0.049, 'SM': 0.88, 'EM': 0.923}
+ CoNet {'MaxF': 0.883, 'MeanF': 0.842, 'WFM': 0.803, 'MAE': 0.063, 'SM': 0.858, 'EM': 0.909}
+ BBSNet {'MaxF': 0.902, 'MeanF': 0.872, 'WFM': 0.83, 'MAE': 0.055, 'SM': 0.879, 'EM': 0.917}
+ CMWNet {'MaxF': 0.89, 'MeanF': 0.851, 'WFM': 0.811, 'MAE': 0.062, 'SM': 0.867, 'EM': 0.909}
+
+ ========>> Dataset: SSD <<======== 
+ HDFNet_VGG16 {'MaxF': 0.872, 'MeanF': 0.844, 'WFM': 0.808, 'MAE': 0.048, 'SM': 0.866, 'EM': 0.913}
+ HDFNet_VGG19 {'MaxF': 0.883, 'MeanF': 0.847, 'WFM': 0.819, 'MAE': 0.046, 'SM': 0.875, 'EM': 0.911}
+ HDFNet_Res50 {'MaxF': 0.885, 'MeanF': 0.842, 'WFM': 0.821, 'MAE': 0.045, 'SM': 0.879, 'EM': 0.911}
+ S2MA {'MaxF': 0.878, 'MeanF': 0.818, 'WFM': 0.787, 'MAE': 0.052, 'SM': 0.868, 'EM': 0.898}
+ CoNet {'MaxF': 0.851, 'MeanF': 0.806, 'WFM': 0.78, 'MAE': 0.059, 'SM': 0.853, 'EM': 0.898}
+ BBSNet {'MaxF': 0.888, 'MeanF': 0.849, 'WFM': 0.811, 'MAE': 0.044, 'SM': 0.882, 'EM': 0.92}
+ CMWNet {'MaxF': 0.883, 'MeanF': 0.82, 'WFM': 0.795, 'MAE': 0.051, 'SM': 0.875, 'EM': 0.902}
+
+ ========>> Dataset: STEREO797 <<======== 
+ HDFNet_VGG16 {'MaxF': 0.891, 'MeanF': 0.856, 'WFM': 0.831, 'MAE': 0.052, 'SM': 0.879, 'EM': 0.922}
+ HDFNet_VGG19 {'MaxF': 0.889, 'MeanF': 0.855, 'WFM': 0.829, 'MAE': 0.053, 'SM': 0.876, 'EM': 0.918}
+ HDFNet_Res50 {'MaxF': 0.892, 'MeanF': 0.855, 'WFM': 0.837, 'MAE': 0.053, 'SM': 0.882, 'EM': 0.92}
+ CoNet {'MaxF': 0.912, 'MeanF': 0.885, 'WFM': 0.871, 'MAE': 0.04, 'SM': 0.908, 'EM': 0.941}
+
+ ========>> Dataset: STEREO1000 <<======== 
+ HDFNet_VGG16 {'MaxF': 0.918, 'MeanF': 0.879, 'WFM': 0.863, 'MAE': 0.039, 'SM': 0.906, 'EM': 0.937}
+ HDFNet_VGG19 {'MaxF': 0.916, 'MeanF': 0.875, 'WFM': 0.859, 'MAE': 0.04, 'SM': 0.903, 'EM': 0.934}
+ HDFNet_Res50 {'MaxF': 0.91, 'MeanF': 0.867, 'WFM': 0.853, 'MAE': 0.041, 'SM': 0.9, 'EM': 0.931}
+ UCNet {'MaxF': 0.908, 'MeanF': 0.885, 'WFM': 0.867, 'MAE': 0.039, 'SM': 0.903, 'EM': 0.942}
+ JLDCF {'MaxF': 0.913, 'MeanF': 0.869, 'WFM': 0.857, 'MAE': 0.04, 'SM': 0.903, 'EM': 0.937}
+ S2MA {'MaxF': 0.895, 'MeanF': 0.855, 'WFM': 0.825, 'MAE': 0.051, 'SM': 0.89, 'EM': 0.926}
+ BBSNet {'MaxF': 0.919, 'MeanF': 0.885, 'WFM': 0.858, 'MAE': 0.041, 'SM': 0.908, 'EM': 0.941}
+ CMWNet {'MaxF': 0.911, 'MeanF': 0.869, 'WFM': 0.847, 'MAE': 0.043, 'SM': 0.905, 'EM': 0.93}
+
+ ========>> Dataset: DUTRGBD <<======== 
+ HDFNet_VGG16 {'MaxF': 0.926, 'MeanF': 0.892, 'WFM': 0.865, 'MAE': 0.04, 'SM': 0.905, 'EM': 0.938}
+ HDFNet_VGG19 {'MaxF': 0.934, 'MeanF': 0.894, 'WFM': 0.871, 'MAE': 0.039, 'SM': 0.911, 'EM': 0.941}
+ HDFNet_Res50 {'MaxF': 0.93, 'MeanF': 0.885, 'WFM': 0.864, 'MAE': 0.041, 'SM': 0.907, 'EM': 0.938}
+ JLDCF {'MaxF': 0.924, 'MeanF': 0.883, 'WFM': 0.863, 'MAE': 0.043, 'SM': 0.905, 'EM': 0.938}
+ S2MA {'MaxF': 0.909, 'MeanF': 0.866, 'WFM': 0.862, 'MAE': 0.044, 'SM': 0.903, 'EM': 0.921}
+ CoNet {'MaxF': 0.935, 'MeanF': 0.909, 'WFM': 0.891, 'MAE': 0.033, 'SM': 0.919, 'EM': 0.952}
+ BBSNet {'MaxF': 0.933, 'MeanF': 0.904, 'WFM': 0.874, 'MAE': 0.038, 'SM': 0.912, 'EM': 0.945}
+ CMWNet {'MaxF': 0.904, 'MeanF': 0.866, 'WFM': 0.831, 'MAE': 0.056, 'SM': 0.887, 'EM': 0.922}
+
